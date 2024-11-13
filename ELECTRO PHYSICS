@@ -1,0 +1,316 @@
+#include <stdio.h>
+#include <math.h>
+
+void convert_charge();
+void convert_voltage();
+void convert_current();
+void convert_resistance();
+void convert_capacitance();
+void convert_power();
+void convert_energy();
+void convert_magnetic_field();
+void convert_inductance();
+void convert_frequency();
+void convert_magnetic_flux();
+void convert_electric_field();
+void convert_magnetic_moment();
+void convert_permittivity();
+void convert_permeability();
+
+int main() {
+    int choice;
+
+    do {
+        // Menu
+        printf("\nElectro-Physics Unit Converter\n");
+        printf("1. Convert Charge\n");
+        printf("2. Convert Voltage\n");
+        printf("3. Convert Current\n");
+        printf("4. Convert Resistance\n");
+        printf("5. Convert Capacitance\n");
+        printf("6. Convert Power\n");
+        printf("7. Convert Energy\n");
+        printf("8. Convert Magnetic Field\n");
+        printf("9. Convert Inductance\n");
+        printf("10. Convert Frequency\n");
+        printf("11. Convert Magnetic Flux\n");
+        printf("12. Convert Electric Field\n");
+        printf("13. Convert Magnetic Moment\n");
+        printf("14. Convert Permittivity\n");
+        printf("15. Convert Permeability\n");
+        printf("16. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                convert_charge();
+                break;
+            case 2:
+                convert_voltage();
+                break;
+            case 3:
+                convert_current();
+                break;
+            case 4:
+                convert_resistance();
+                break;
+            case 5:
+                convert_capacitance();
+                break;
+            case 6:
+                convert_power();
+                break;
+            case 7:
+                convert_energy();
+                break;
+            case 8:
+                convert_magnetic_field();
+                break;
+            case 9:
+                convert_inductance();
+                break;
+            case 10:
+                convert_frequency();
+                break;
+            case 11:
+                convert_magnetic_flux();
+                break;
+            case 12:
+                convert_electric_field();
+                break;
+            case 13:
+                convert_magnetic_moment();
+                break;
+            case 14:
+                convert_permittivity();
+                break;
+            case 15:
+                convert_permeability();
+                break;
+            case 16:
+                printf("Exiting the program...\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 16);
+
+    return 0;
+}
+
+
+void convert_charge() {
+    double charge, electron_count;
+
+    printf("\nEnter charge in Coulombs: ");
+    scanf("%lf", &charge);
+
+    
+    electron_count = charge / 1.602e-19;
+
+    printf("%.2lf Coulombs = %.2e electrons\n", charge, electron_count);
+}
+
+
+void convert_voltage() {
+    double voltage, joules, charge;
+
+    printf("\nEnter voltage (V): ");
+    scanf("%lf", &voltage);
+    printf("Enter charge in Coulombs: ");
+    scanf("%lf", &charge);
+
+    
+    joules = voltage * charge;
+
+    printf("%.2lf V * %.2lf C = %.2lf Joules\n", voltage, charge, joules);
+}
+
+
+void convert_current() {
+    double charge, time, current;
+
+    printf("\nEnter charge in Coulombs: ");
+    scanf("%lf", &charge);
+    printf("Enter time in seconds: ");
+    scanf("%lf", &time);
+
+    
+    current = charge / time;
+
+    printf("Current = %.2lf Amperes\n", current);
+}
+
+
+void convert_resistance() {
+    double voltage, current, resistance;
+
+    printf("\nEnter voltage (V): ");
+    scanf("%lf", &voltage);
+    printf("Enter current (A): ");
+    scanf("%lf", &current);
+
+    
+    resistance = voltage / current;
+
+    printf("Resistance = %.2lf Ohms\n", resistance);
+}
+
+
+void convert_capacitance() {
+    double charge, voltage, capacitance;
+
+    printf("\nEnter charge in Coulombs: ");
+    scanf("%lf", &charge);
+    printf("Enter voltage in Volts: ");
+    scanf("%lf", &voltage);
+
+
+    capacitance = charge / voltage;
+
+    printf("Capacitance = %.2lf Farads\n", capacitance);
+}
+
+
+void convert_power() {
+    double voltage, current, power;
+
+    printf("\nEnter voltage (V): ");
+    scanf("%lf", &voltage);
+    printf("Enter current (A): ");
+    scanf("%lf", &current);
+
+    
+    power = voltage * current;
+
+    printf("Power = %.2lf Watts\n", power);
+}
+
+
+void convert_energy() {
+    double charge, voltage, energy;
+
+    printf("\nEnter charge in Coulombs: ");
+    scanf("%lf", &charge);
+    printf("Enter voltage in Volts: ");
+    scanf("%lf", &voltage);
+
+    
+    energy = charge * voltage;
+
+    printf("Energy = %.2lf Joules\n", energy);
+}
+
+
+void convert_magnetic_field() {
+    double force, current, length, magnetic_field;
+
+    printf("\nEnter force in Newtons: ");
+    scanf("%lf", &force);
+    printf("Enter current in Amperes: ");
+    scanf("%lf", &current);
+    printf("Enter length of the conductor in meters: ");
+    scanf("%lf", &length);
+
+    
+    magnetic_field = force / (current * length);
+
+    printf("Magnetic Field = %.2lf Tesla\n", magnetic_field);
+}
+
+
+void convert_inductance() {
+    double voltage, current, time, inductance;
+
+    printf("\nEnter voltage (V): ");
+    scanf("%lf", &voltage);
+    printf("Enter current (A): ");
+    scanf("%lf", &current);
+    printf("Enter time (s): ");
+    scanf("%lf", &time);
+
+    
+    inductance = voltage * time / current;
+
+    printf("Inductance = %.2lf Henry\n", inductance);
+}
+
+void convert_frequency() {
+    double period, frequency;
+
+    printf("\nEnter period in seconds: ");
+    scanf("%lf", &period);
+
+    
+    frequency = 1 / period;
+
+    printf("Frequency = %.2lf Hz\n", frequency);
+}
+
+
+void convert_magnetic_flux() {
+    double magnetic_field, area, flux;
+
+    printf("\nEnter magnetic field (Tesla): ");
+    scanf("%lf", &magnetic_field);
+    printf("Enter area in square meters: ");
+    scanf("%lf", &area);
+
+    
+    flux = magnetic_field * area;
+
+    printf("Magnetic Flux = %.2lf Weber\n", flux);
+}
+
+
+void convert_electric_field() {
+    double voltage, distance, electric_field;
+
+    printf("\nEnter voltage (V): ");
+    scanf("%lf", &voltage);
+    printf("Enter distance in meters: ");
+    scanf("%lf", &distance);
+
+    
+    electric_field = voltage / distance;
+
+    printf("Electric Field = %.2lf V/m\n", electric_field);
+}
+
+
+void convert_magnetic_moment() {
+    double current, area, magnetic_moment;
+
+    printf("\nEnter current (A): ");
+    scanf("%lf", &current);
+    printf("Enter area in square meters: ");
+    scanf("%lf", &area);
+
+    
+    magnetic_moment = current * area;
+
+    printf("Magnetic Moment = %.2lf A·m^2\n", magnetic_moment);
+}
+
+
+void convert_permittivity() {
+    double permittivity;
+
+    printf("\nEnter permittivity in Farad/meter: ");
+    scanf("%lf", &permittivity);
+
+    printf("Permittivity = %.2lf F/m\n", permittivity);
+}
+
+
+void convert_permeability() {
+    double permeability;
+
+    printf("\nEnter permeability in Henry/meter: ");
+    scanf("%lf", &permeability);
+
+    printf("Permeability = %.2lf H/m\n", permeability);
+}
+
+
