@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+#define DYNE_CONVERSION 100000  // 1 N = 100000 dynes
+#define POUND_FORCE_CONVERSION 0.224809  // 1 N = 0.224809 pounds-force
+#define KILOGRAM_FORCE_CONVERSION 0.101971  // 1 N = 0.101971 kgf
+
+// Function to convert from Newtons to other units
+void convertFromNewtons(double newtons) {
+    printf("%.2f N = %.2f dynes\n", newtons, newtons * DYNE_CONVERSION);
+    printf("%.2f N = %.2f pounds-force\n", newtons, newtons * POUND_FORCE_CONVERSION);
+    printf("%.2f N = %.2f kilograms-force\n", newtons, newtons * KILOGRAM_FORCE_CONVERSION);
+}
+
+// Function to convert from dynes to Newtons
+void convertFromDynes(double dynes) {
+    double newtons = dynes / DYNE_CONVERSION;
+    printf("%.2f dynes = %.2f N\n", dynes, newtons);
+    printf("%.2f dynes = %.2f pounds-force\n", dynes, newtons * POUND_FORCE_CONVERSION);
+    printf("%.2f dynes = %.2f kilograms-force\n", dynes, newtons * KILOGRAM_FORCE_CONVERSION);
+}
+
+// Function to convert from pounds-force to Newtons
+void convertFromPoundsForce(double pounds) {
+    double newtons = pounds / POUND_FORCE_CONVERSION;
+    printf("%.2f pounds-force = %.2f N\n", pounds, newtons);
+    printf("%.2f pounds-force = %.2f dynes\n", pounds, newtons * DYNE_CONVERSION);
+    printf("%.2f pounds-force = %.2f kilograms-force\n", pounds, newtons * KILOGRAM_FORCE_CONVERSION);
+}
+
+// Function to convert from kilograms-force to Newtons
+void convertFromKilogramsForce(double kgf) {
+    double newtons = kgf / KILOGRAM_FORCE_CONVERSION;
+    printf("%.2f kilograms-force = %.2f N\n", kgf, newtons);
+    printf("%.2f kilograms-force = %.2f dynes\n", kgf, newtons * DYNE_CONVERSION);
+    printf("%.2f kilograms-force = %.2f pounds-force\n", kgf, newtons * POUND_FORCE_CONVERSION);
+}
+
+int main() {
+    int choice;
+    double value;
+
+    printf("Unit Conversion Calculator\n");
+    printf("Select the unit you want to convert from:\n");
+    printf("1. Newtons (N)\n");
+    printf("2. Dynes\n");
+    printf("3. Pounds-force\n");
+    printf("4. Kilograms-force (kgf)\n");
+    printf("Enter your choice (1-4): ");
+    scanf("%d", &choice);
+
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+
+    switch (choice) {
+        case 1:
+            convertFromNewtons(value);
+            break;
+        case 2:
+            convertFromDynes(value);
+            break;
+        case 3:
+            convertFromPoundsForce(value);
+            break;
+        case 4:
+            convertFromKilogramsForce(value);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            break;
+    }
+
+    return 0;
+}
