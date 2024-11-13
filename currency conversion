@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+// Function to convert INR to foreign currencies
+float inr_to_currency(float inr, int choice) {
+    switch (choice) {
+        case 1: return inr * 0.012; // INR to USD (US DOLLAR)
+        case 2: return inr * 0.011; // INR to EUR (Euro)
+        case 3: return inr * 0.0095; // INR to GBP (British Pound)
+        case 4: return inr * 1.2; // INR to JPY (Japanese Yen)
+        case 5: return inr * 0.017; // INR to AUD (Australian Dollar)
+        case 6: return inr * 0.016; // INR to CAD (Canadian Dollar)
+        case 7: return inr * 0.017; // INR to SGD (Singapore Dollar)
+        case 8: return inr * 0.010; // INR to CHF (Swiss Franc)
+        case 9: return inr * 0.045; // INR to AED (United Arab Emirates Dirham)
+        case 10: return inr * 0.045; // INR to SAR (Saudi Riyal)
+        case 11: return inr * 0.11; // INR to CNY (Chinese Yuan)
+        case 12: return inr * 0.095; // INR to HKD (Hong Kong Dollar)
+        case 13: return inr * 0.055; // INR to MYR (Malaysian Ringgit)
+        case 14: return inr * 0.018; // INR to NZD (New Zealand Dollar)
+        case 15: return inr * 0.20; // INR to ZAR (South African Rand)
+        case 16: return inr * 3.8; // INR to PKR (Pakistani Rupee)
+        case 17: return inr * 1.25; // INR to BDT (Bangladeshi Taka)
+        case 18: return inr * 3.8; // INR to LKR (Sri Lankan Rupee)
+        case 19: return inr * 1.7; // INR to NPR (Nepalese Rupee)
+        case 20: return inr * 0.43; // INR to THB (Thai Baht)
+        case 21: return inr * 17; // INR to KRW (South Korean Won)
+        case 22: return inr * 210; // INR to IDR (Indonesian Rupiah)
+        default: return 0;
+    }
+}
+
+// Function to convert foreign currencies to INR
+float currency_to_inr(float amount, int choice) {
+    switch (choice) {
+        case 1: return amount / 0.012; // USD to INR (US DOLLAR)
+        case 2: return amount / 0.011; // EUR to INR (Euro)
+        case 3: return amount / 0.0095; // GBP to INR (British Pound)
+        case 4: return amount / 1.2; // JPY to INR (Japanese Yen)
+        case 5: return amount / 0.017; // AUD to INR (Australian Dollar)
+        case 6: return amount / 0.016; // CAD to INR (Canadian Dollar)
+        case 7: return amount / 0.017; // SGD to INR  (Singapore Dollar)
+        case 8: return amount / 0.010; // CHF to INR (Swiss Franc)
+        case 9: return amount / 0.045; // AED to INR  (United Arab Emirates Dirham)
+        case 10: return amount / 0.045; // SAR to INR  (Saudi Riyal)
+        case 11: return amount / 0.11; // CNY to INR  (Chinese Yuan)
+        case 12: return amount / 0.095; // HKD to INR  (Hong Kong Dollar)
+        case 13: return amount / 0.055; // MYR to INR (Malaysian Ringgit)
+        case 14: return amount / 0.018; // NZD to INR (New Zealand Dollar)
+        case 15: return amount / 0.20; // ZAR to INR (South African Rand)
+        case 16: return amount / 3.8; // PKR to INR  (Pakistani Rupee)
+        case 17: return amount / 1.25; // BDT to INR (Bangladeshi Taka)
+        case 18: return amount / 3.8; // LKR to INR (Sri Lankan Rupee)
+        case 19: return amount / 1.7; // NPR to INR  (Nepalese Rupee)
+        case 20: return amount / 0.43; // THB to INR (Thai Baht)
+        case 21: return amount / 17; // KRW to INR (South Korean Won)
+        case 22: return amount / 210; // IDR to INR (Indonesian Rupiah)
+        default: return 0;
+    }
+}
+
+int main() {
+    int choice, direction;
+    float amount, result;
+
+    printf("Currency Conversion Program (INR and Foreign Currencies)\n");
+    printf("1. INR to Foreign Currency\n");
+    printf("2. Foreign Currency to INR\n");
+    printf("Choose the conversion direction (1 or 2): ");
+    scanf("%d", &direction);
+
+    if (direction == 1) {
+        // INR to foreign currency
+        printf("Enter amount in INR: ");
+        scanf("%f", &amount);
+
+        printf("Choose the currency to convert to:\n");
+        printf("1. USD\n2. EUR\n3. GBP\n4. JPY\n5. AUD\n6. CAD\n7. SGD\n8. CHF\n");
+        printf("9. AED\n10. SAR\n11. CNY\n12. HKD\n13. MYR\n14. NZD\n");
+        printf("15. ZAR\n16. PKR\n17. BDT\n18. LKR\n19. NPR\n20. THB\n");
+        printf("21. KRW\n22. IDR\nChoose currency (1-22): ");
+        scanf("%d", &choice);
+
+        result = inr_to_currency(amount, choice);
+        printf("Converted amount: %.2f\n", result);
+    }
+    else if (direction == 2) {
+        // Foreign currency to INR
+        printf("Enter amount in foreign currency: ");
+        scanf("%f", &amount);
+
+        printf("Choose the currency to convert from:\n");
+        printf("1. USD\n2. EUR\n3. GBP\n4. JPY\n5. AUD\n6. CAD\n7. SGD\n8. CHF\n");
+        printf("9. AED\n10. SAR\n11. CNY\n12. HKD\n13. MYR\n14. NZD\n");
+        printf("15. ZAR\n16. PKR\n17. BDT\n18. LKR\n19. NPR\n20. THB\n");
+        printf("21. KRW\n22. IDR\nChoose currency (1-22): ");
+        scanf("%d", &choice);
+
+        result = currency_to_inr(amount, choice);
+        printf("Converted amount in INR: %.2f\n", result);
+    }
+    else {
+        printf("Invalid choice! Please restart the program.\n");
+    }
+
+    return 0;
+}
