@@ -1,0 +1,219 @@
+#include <stdio.h>
+
+void massConversion() {
+    int choice;
+    float amount, result;
+    
+    printf("Mass Conversion:\n");
+    printf("1. Grams to Kilograms\n");
+    printf("2. Milligrams to Grams\n");
+    printf("3. Micrograms to Milligrams\n");
+    printf("4. Pounds to Grams\n");
+    printf("5. Ounces to Grams\n");
+    printf("Choose an option: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            printf("Enter amount in Grams: ");
+            scanf("%f", &amount);
+            result = amount / 1000;
+            printf("%.2f Grams = %.2f Kilograms\n", amount, result);
+            break;
+        case 2:
+            printf("Enter amount in Milligrams: ");
+            scanf("%f", &amount);
+            result = amount / 1000;
+            printf("%.2f Milligrams = %.2f Grams\n", amount, result);
+            break;
+        case 3:
+            printf("Enter amount in Micrograms: ");
+            scanf("%f", &amount);
+            result = amount / 1000;
+            printf("%.2f Micrograms = %.2f Milligrams\n", amount, result);
+            break;
+        case 4:
+            printf("Enter amount in Pounds: ");
+            scanf("%f", &amount);
+            result = amount * 453.592;
+            printf("%.2f Pounds = %.2f Grams\n", amount, result);
+            break;
+        case 5:
+            printf("Enter amount in Ounces: ");
+            scanf("%f", &amount);
+            result = amount * 28.3495;
+            printf("%.2f Ounces = %.2f Grams\n", amount, result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+}
+
+void volumeConversion() {
+    int choice;
+    float amount, result;
+    
+    printf("Volume Conversion:\n");
+    printf("1. Milliliters to Liters\n");
+    printf("2. Liters to Cubic Meters\n");
+    printf("3. Gallons (US) to Liters\n");
+    printf("Choose an option: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            printf("Enter amount in Milliliters: ");
+            scanf("%f", &amount);
+            result = amount / 1000;
+            printf("%.2f Milliliters = %.2f Liters\n", amount, result);
+            break;
+        case 2:
+            printf("Enter amount in Liters: ");
+            scanf("%f", &amount);
+            result = amount / 1000;
+            printf("%.2f Liters = %.2f Cubic Meters\n", amount, result);
+            break;
+        case 3:
+            printf("Enter amount in Gallons (US): ");
+            scanf("%f", &amount);
+            result = amount * 3.78541;
+            printf("%.2f Gallons (US) = %.2f Liters\n", amount, result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+}
+
+void temperatureConversion() {
+    int choice;
+    float amount, result;
+    
+    printf("Temperature Conversion:\n");
+    printf("1. Celsius to Fahrenheit\n");
+    printf("2. Celsius to Kelvin\n");
+    printf("3. Fahrenheit to Celsius\n");
+    printf("Choose an option: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            printf("Enter temperature in Celsius: ");
+            scanf("%f", &amount);
+            result = (amount * 9/5) + 32;
+            printf("%.2f Celsius = %.2f Fahrenheit\n", amount, result);
+            break;
+        case 2:
+            printf("Enter temperature in Celsius: ");
+            scanf("%f", &amount);
+            result = amount + 273.15;
+            printf("%.2f Celsius = %.2f Kelvin\n", amount, result);
+            break;
+        case 3:
+            printf("Enter temperature in Fahrenheit: ");
+            scanf("%f", &amount);
+            result = (amount - 32) * 5/9;
+            printf("%.2f Fahrenheit = %.2f Celsius\n", amount, result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+}
+
+void pressureConversion() {
+    int choice;
+    float amount, result;
+    
+    printf("Pressure Conversion:\n");
+    printf("1. Atmospheres to Pascals\n");
+    printf("2. Bar to Pascals\n");
+    printf("3. Torr to Atmospheres\n");
+    printf("Choose an option: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            printf("Enter pressure in Atmospheres: ");
+            scanf("%f", &amount);
+            result = amount * 101325;
+            printf("%.2f Atmospheres = %.2f Pascals\n", amount, result);
+            break;
+        case 2:
+            printf("Enter pressure in Bar: ");
+            scanf("%f", &amount);
+            result = amount * 100000;
+            printf("%.2f Bar = %.2f Pascals\n", amount, result);
+            break;
+        case 3:
+            printf("Enter pressure in Torr: ");
+            scanf("%f", &amount);
+            result = amount / 760;
+            printf("%.2f Torr = %.2f Atmospheres\n", amount, result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+}
+
+void energyConversion() {
+    int choice;
+    float amount, result;
+    
+    printf("Energy Conversion:\n");
+    printf("1. Joules to Calories\n");
+    printf("2. Kilojoules to Joules\n");
+    printf("Choose an option: ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            printf("Enter energy in Joules: ");
+            scanf("%f", &amount);
+            result = amount / 4.184;
+            printf("%.2f Joules = %.2f Calories\n", amount, result);
+            break;
+        case 2:
+            printf("Enter energy in Kilojoules: ");
+            scanf("%f", &amount);
+            result = amount * 1000;
+            printf("%.2f Kilojoules = %.2f Joules\n", amount, result);
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+}
+
+int main() {
+    int choice;
+    
+    printf("Welcome to the Chemistry Unit Conversion Program!\n");
+    printf("Select the conversion you want to perform:\n");
+    printf("1. Mass Conversion\n");
+    printf("2. Volume Conversion\n");
+    printf("3. Temperature Conversion\n");
+    printf("4. Pressure Conversion\n");
+    printf("5. Energy Conversion\n");
+    printf("Enter your choice (1-5): ");
+    scanf("%d", &choice);
+    
+    switch (choice) {
+        case 1:
+            massConversion();
+            break;
+        case 2:
+            volumeConversion();
+            break;
+        case 3:
+            temperatureConversion();
+            break;
+        case 4:
+            pressureConversion();
+            break;
+        case 5:
+            energyConversion();
+            break;
+        default:
+            printf("Invalid choice!\n");
+    }
+    
+    return 0;
+}
