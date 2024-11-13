@@ -1,0 +1,111 @@
+#include <stdio.h>
+
+#define MINUTE_CONVERSION 60.0         // 1 minute = 60 seconds
+#define HOUR_CONVERSION 3600.0          // 1 hour = 3600 seconds
+#define DAY_CONVERSION 86400.0          // 1 day = 86400 seconds
+#define WEEK_CONVERSION 604800.0        // 1 week = 604800 seconds
+#define YEAR_CONVERSION 31536000.0      // 1 year = 31536000 seconds
+
+// Function to convert from seconds to other units
+void convertFromSeconds(double seconds) {
+    printf("%.2f seconds = %.2f minutes\n", seconds, seconds / MINUTE_CONVERSION);
+    printf("%.2f seconds = %.2f hours\n", seconds, seconds / HOUR_CONVERSION);
+    printf("%.2f seconds = %.2f days\n", seconds, seconds / DAY_CONVERSION);
+    printf("%.2f seconds = %.2f weeks\n", seconds, seconds / WEEK_CONVERSION);
+    printf("%.2f seconds = %.2f years\n", seconds, seconds / YEAR_CONVERSION);
+}
+
+// Function to convert from minutes to seconds
+void convertFromMinutes(double minutes) {
+    double seconds = minutes * MINUTE_CONVERSION;
+    printf("%.2f minutes = %.2f seconds\n", minutes, seconds);
+    printf("%.2f minutes = %.2f hours\n", minutes, seconds / HOUR_CONVERSION);
+    printf("%.2f minutes = %.2f days\n", minutes, seconds / DAY_CONVERSION);
+    printf("%.2f minutes = %.2f weeks\n", minutes, seconds / WEEK_CONVERSION);
+    printf("%.2f minutes = %.2f years\n", minutes, seconds / YEAR_CONVERSION);
+}
+
+// Function to convert from hours to seconds
+void convertFromHours(double hours) {
+    double seconds = hours * HOUR_CONVERSION;
+    printf("%.2f hours = %.2f seconds\n", hours, seconds);
+    printf("%.2f hours = %.2f minutes\n", hours, seconds / MINUTE_CONVERSION);
+    printf("%.2f hours = %.2f days\n", hours, seconds / DAY_CONVERSION);
+    printf("%.2f hours = %.2f weeks\n", hours, seconds / WEEK_CONVERSION);
+    printf("%.2f hours = %.2f years\n", hours, seconds / YEAR_CONVERSION);
+}
+
+// Function to convert from days to seconds
+void convertFromDays(double days) {
+    double seconds = days * DAY_CONVERSION;
+    printf("%.2f days = %.2f seconds\n", days, seconds);
+    printf("%.2f days = %.2f minutes\n", days, seconds / MINUTE_CONVERSION);
+    printf("%.2f days = %.2f hours\n", days, seconds / HOUR_CONVERSION);
+    printf("%.2f days = %.2f weeks\n", days, seconds / WEEK_CONVERSION);
+    printf("%.2f days = %.2f years\n", days, seconds / YEAR_CONVERSION);
+}
+
+// Function to convert from weeks to seconds
+void convertFromWeeks(double weeks) {
+    double seconds = weeks * WEEK_CONVERSION;
+    printf("%.2f weeks = %.2f seconds\n", weeks, seconds);
+    printf("%.2f weeks = %.2f minutes\n", weeks, seconds / MINUTE_CONVERSION);
+    printf("%.2f weeks = %.2f hours\n", weeks, seconds / HOUR_CONVERSION);
+    printf("%.2f weeks = %.2f days\n", weeks, seconds / DAY_CONVERSION);
+    printf("%.2f weeks = %.2f years\n", weeks, seconds / YEAR_CONVERSION);
+}
+
+// Function to convert from years to seconds
+void convertFromYears(double years) {
+    double seconds = years * YEAR_CONVERSION;
+    printf("%.2f years = %.2f seconds\n", years, seconds);
+    printf("%.2f years = %.2f minutes\n", years, seconds / MINUTE_CONVERSION);
+    printf("%.2f years = %.2f hours\n", years, seconds / HOUR_CONVERSION);
+    printf("%.2f years = %.2f days\n", years, seconds / DAY_CONVERSION);
+    printf("%.2f years = %.2f weeks\n", years, seconds / WEEK_CONVERSION);
+}
+
+int main() {
+    int choice;
+    double value;
+
+    printf("Unit Conversion Calculator\n");
+    printf("Select the unit you want to convert from:\n");
+    printf("1. Seconds (s)\n");
+    printf("2. Minutes (min)\n");
+    printf("3. Hours (h)\n");
+    printf("4. Days\n");
+    printf("5. Weeks\n");
+ printf("6. Years\n");
+    printf("Enter your choice (1-6): ");
+    scanf("%d", &choice);
+
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+
+    switch (choice) {
+        case 1:
+            convertFromSeconds(value);
+            break;
+        case 2:
+            convertFromMinutes(value);
+            break;
+        case 3:
+            convertFromHours(value);
+            break;
+        case 4:
+            convertFromDays(value);
+            break;
+        case 5:
+            convertFromWeeks(value);
+            break;
+        case 6:
+            convertFromYears(value);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            break;
+    }
+
+    return 0;
+}
