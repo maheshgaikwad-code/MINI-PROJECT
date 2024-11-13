@@ -1,0 +1,183 @@
+#include <stdio.h>
+
+#define KILOMETER_CONVERSION 0.001     // 1 km = 1000 m
+#define CENTIMETER_CONVERSION 100.0    // 1 m = 100 cm
+#define MILIMETER_CONVERSION 1000.0   // 1 m = 1000 mm
+#define MILE_CONVERSION 0.000621371    // 1 mile = 1609.34 m
+#define DECIMETER_CONVERSION 10.0     // 1 m = 10 dm
+#define FOOT_CONVERSION 3.28084       // 1 m = 3.28084 ft
+#define INCH_CONVERSION 39.3701       // 1 m = 39.3701 in
+#define YARD_CONVERSION 1.09361       // 1 m = 1.09361 yd
+
+// Function to convert from meters to other units
+void convertFromMeters(double meters) {
+    printf("%.2f m = %.2f kilometers\n", meters, meters * KILOMETER_CONVERSION);
+    printf("%.2f m = %.2f centimeters\n", meters, meters * CENTIMETER_CONVERSION);
+    printf("%.2f m = %.2f millimeters\n", meters, meters * MILIMETER_CONVERSION);
+    printf("%.2f m = %.2f miles\n", meters, meters * MILE_CONVERSION);
+    printf("%.2f m = %.2f decimeters\n", meters, meters * DECIMETER_CONVERSION);
+    printf("%.2f m = %.2f feet\n", meters, meters * FOOT_CONVERSION);
+    printf("%.2f m = %.2f inches\n", meters, meters * INCH_CONVERSION);
+    printf("%.2f m = %.2f yards\n", meters, meters * YARD_CONVERSION);
+}
+
+// Function to convert from kilometers to meters
+void convertFromKilometers(double kilometers) {
+    double meters = kilometers / KILOMETER_CONVERSION;
+    printf("%.2f kilometers = %.2f m\n", kilometers, meters);
+    printf("%.2f kilometers = %.2f centimeters\n", kilometers, meters * CENTIMETER_CONVERSION);
+    printf("%.2f kilometers = %.2f millimeters\n", kilometers, meters * MILIMETER_CONVERSION);
+    printf("%.2f kilometers = %.2f miles\n", kilometers, meters * MILE_CONVERSION);
+    printf("%.2f kilometers = %.2f decimeters\n", kilometers, meters * DECIMETER_CONVERSION);
+    printf("%.2f kilometers = %.2f feet\n", kilometers, meters * FOOT_CONVERSION);
+    printf("%.2f kilometers = %.2f inches\n", kilometers, meters * INCH_CONVERSION);
+    printf("%.2f kilometers = %.2f yards\n", kilometers, meters * YARD_CONVERSION);
+}
+
+// Function to convert from centimeters to meters
+void convertFromCentimeters(double centimeters) {
+    double meters = centimeters / CENTIMETER_CONVERSION;
+    printf("%.2f centimeters = %.2f m\n", centimeters, meters);
+    printf("%.2f centimeters = %.2f kilometers\n", centimeters, meters * KILOMETER_CONVERSION);
+    printf("%.2f centimeters = %.2f millimeters\n", centimeters, meters * MILIMETER_CONVERSION);
+    printf("%.2f centimeters = %.2f miles\n", centimeters, meters * MILE_CONVERSION);
+    printf("%.2f centimeters = %.2f decimeters\n", centimeters, meters * DECIMETER_CONVERSION);
+    printf("%.2f centimeters = %.2f feet\n", centimeters, meters * FOOT_CONVERSION);
+    printf("%.2f centimeters = %.2f inches\n", centimeters, meters * INCH_CONVERSION);
+    printf("%.2f centimeters = %.2f yards\n", centimeters, meters * YARD_CONVERSION);
+}
+
+// Function to convert from millimeters to meters
+void convertFromMillimeters(double millimeters) {
+    double meters = millimeters / MILIMETER_CONVERSION;
+    printf("%.2f millimeters = %.2f m\n", millimeters, meters);
+    printf("%.2f millimeters = %.2f kilometers\n", millimeters, meters * KILOMETER_CONVERSION);
+    printf("%.2f millimeters = %.2f centimeters\n", millimeters, meters * CENTIMETER_CONVERSION);
+    printf("%.2f millimeters = %.2f miles\n", millimeters, meters * MILE_CONVERSION);
+    printf("%.2f millimeters = %.2f decimeters\n", millimeters, meters * DECIMETER_CONVERSION);
+    printf("%.2f millimeters = %.2f feet\n", millimeters, meters * FOOT_CONVERSION);
+    printf("%.2f millimeters = %.2f inches\n", millimeters, meters * INCH_CONVERSION);
+    printf("%.2f millimeters = %.2f yards\n", millimeters, meters * YARD_CONVERSION);
+}
+
+// Function to convert from miles to meters
+void convertFromMiles(double miles) {
+    double meters = miles / MILE_CONVERSION;
+    printf("%.2f miles = %.2f m\n", miles, meters);
+    printf("%.2f miles = %.2f kilometers\n", miles, meters * KILOMETER_CONVERSION);
+    printf("%.2f miles = %.2f centimeters\n", miles, meters * CENTIMETER_CONVERSION);
+    printf("%.2f miles = %.2f millimeters\n", miles, meters * MILIMETER_CONVERSION);
+    printf("%.2f miles = %.2f decimeters\n", miles, meters * DECIMETER_CONVERSION);
+    printf("%.2f miles = %.2f feet\n", miles, meters * FOOT_CONVERSION);
+    printf("%.2f miles = %.2f inches\n", miles, meters * INCH_CONVERSION);
+    printf("%.2f miles = %.2f yards\n", miles, meters * YARD_CONVERSION);
+}
+
+// Function to convert from decimeters to meters
+void convertFromDecimeters(double decimeters) {
+    double meters = decimeters / DECIMETER_CONVERSION;
+    printf("%.2f decimeters = %.2f m\n", decimeters, meters);
+    printf("%.2f decimeters = %.2f kilometers\n", decimeters, meters * KILOMETER_CONVERSION);
+    printf("%.2f decimeters = %.2f centimeters\n", decimeters, meters * CENTIMETER_CONVERSION);
+    printf("%.2f decimeters = %.2f millimeters\n", decimeters, meters * MILIMETER_CONVERSION);
+    printf("%.2f decimeters = %.2f miles\n", decimeters, meters * MILE_CONVERSION);
+    printf("%.2f decimeters = %.2f feet\n", decimeters, meters * FOOT_CONVERSION);
+    printf("%.2f decimeters = %.2f inches\n", decimeters, meters * INCH_CONVERSION);
+    printf("%.2f decimeters = %.2f yards\n", decimeters, meters * YARD_CONVERSION);
+}
+
+// Function to convert from feet to meters
+void convertFromFeet(double feet) {
+    double meters = feet / FOOT_CONVERSION;
+    printf("%.2f feet = %.2f m\n", feet, meters);
+    printf("%.2f feet = %.2f kilometers\n", feet, meters * KILOMETER_CONVERSION);
+    printf("%.2f feet = %.2f centimeters\n", feet, meters * CENTIMETER_CONVERSION);
+    printf("%.2f feet = %.2f millimeters\n", feet, meters * MILIMETER_CONVERSION);
+    printf("%.2f feet = %.2f miles\n", feet, meters * MILE_CONVERSION);
+    printf("%.2f feet = %.2f decimeters\n", feet, meters * DECIMETER_CONVERSION);
+    printf("%.2f feet = %.2f inches\n", feet, meters * INCH_CONVERSION);
+    printf("%.2f feet = %.2f yards\n", feet, meters * YARD_CONVERSION);
+}
+
+// Function to convert from inches to meters
+void convertFromInches(double inches) {
+    double meters = inches / INCH_CONVERSION;
+    printf("%.2f inches = %.2f m\n", inches, meters);
+    printf("%.2f inches = %.2f kilometers\n", inches, meters * KILOMETER_CONVERSION);
+    printf("%.2f inches = %.2f centimeters\n", inches, meters * CENTIMETER_CONVERSION);
+    printf("%.2f inches = %.2f millimeters\n", inches, meters * MILIMETER_CONVERSION);
+    printf("%.2f inches = %.2f miles\n", inches, meters * MILE_CONVERSION);
+    printf("%.2f inches = %.2f decimeters\n", inches, meters * DECIMETER_CONVERSION);
+    printf("%.2f inches = %.2f feet\n", inches, meters * FOOT_CONVERSION);
+    printf("%.2f inches = %.2f yards\n", inches, meters * YARD_CONVERSION);
+}
+
+// Function to convert from yards to meters
+void convertFromYards(double yards) {
+    double meters = yards / YARD_CONVERSION;
+    printf("%.2f yards = %.2f m\n", yards, meters);
+    printf("%.2f yards = %.2f kilometers\n", yards, meters * KILOMETER_CONVERSION);
+    printf("%.2f yards = %.2f centimeters\n", yards, meters * CENTIMETER_CONVERSION);
+    printf("%.2f yards = %.2f millimeters\n", yards, meters * MILIMETER_CONVERSION);
+    printf("%.2f yards = %.2f miles\n", yards, meters * MILE_CONVERSION);
+    printf("%.2f yards = %.2f decimeters\n", yards, meters * DECIMETER_CONVERSION);
+    printf("%.2f yards = %.2f feet\n", yards, meters * FOOT_CONVERSION);
+    printf("%.2f yards = %.2f inches\n", yards, meters * INCH_CONVERSION);
+}
+
+int main() {
+    int choice;
+    double value;
+
+    printf("Unit Conversion Calculator\n");
+    printf("Select the unit you want to convert from:\n");
+    printf("1. Meters (m)\n");
+    printf("2. Kilometers (km)\n");
+    printf("3. Centimeters (cm)\n");
+    printf("4. Millimeters (mm)\n");
+    printf("5. Miles\n");
+    printf("6. Decimeters (dm)\n");
+    printf("7. Feet (ft)\n");
+    printf("8. Inches (in)\n");
+    printf("9. Yards (yd)\n");
+    printf("Enter your choice (1-9): ");
+    scanf("%d", &choice);
+
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+
+    switch (choice) {
+        case 1:
+            convertFromMeters(value);
+            break;
+        case 2:
+            convertFromKilometers(value);
+            break;
+        case 3:
+            convertFromCentimeters(value);
+            break;
+        case 4:
+            convertFromMillimeters(value);
+            break;
+        case 5:
+            convertFromMiles(value);
+            break;
+        case 6:
+            convertFromDecimeters(value);
+            break;
+        case 7:
+            convertFromFeet(value);
+            break;
+        case 8:
+            convertFromInches(value);
+            break;
+        case 9:
+            convertFromYards(value);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            break;
+    }
+
+    return 0;
+}
