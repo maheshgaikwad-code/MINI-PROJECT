@@ -1,0 +1,316 @@
+#include <stdio.h>
+
+void convert_length();
+void convert_area();
+void convert_volume();
+void convert_mass();
+void convert_time();
+void convert_temperature();
+void convert_speed();
+
+int main() {
+    int choice;
+    
+    do {
+        
+        printf("\nUnit Converter\n");
+        printf("1. Length Conversion\n");
+        printf("2. Area Conversion\n");
+        printf("3. Volume Conversion\n");
+        printf("4. Mass Conversion\n");
+        printf("5. Time Conversion\n");
+        printf("6. Temperature Conversion\n");
+        printf("7. Speed Conversion\n");
+        printf("8. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice) {
+            case 1:
+                convert_length();
+                break;
+            case 2:
+                convert_area();
+                break;
+            case 3:
+                convert_volume();
+                break;
+            case 4:
+                convert_mass();
+                break;
+            case 5:
+                convert_time();
+                break;
+            case 6:
+                convert_temperature();
+                break;
+            case 7:
+                convert_speed();
+                break;
+            case 8:
+                printf("Exiting the program...\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 8);
+
+    return 0;
+}
+
+
+void convert_length() {
+    int option;
+    double value, result;
+    
+    printf("\nLength Conversion:\n");
+    printf("1. Meter to Kilometer\n");
+    printf("2. Meter to Centimeter\n");
+    printf("3. Meter to Millimeter\n");
+    printf("4. Kilometer to Mile\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value * 0.001;
+            printf("%.2f Meter = %.2f Kilometer\n", value, result);
+            break;
+        case 2:
+            result = value * 100;
+            printf("%.2f Meter = %.2f Centimeter\n", value, result);
+            break;
+        case 3:
+            result = value * 1000;
+            printf("%.2f Meter = %.2f Millimeter\n", value, result);
+            break;
+        case 4:
+            result = value * 0.621371;
+            printf("%.2f Kilometer = %.2f Mile\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_area() {
+    int option;
+    double value, result;
+    
+    printf("\nArea Conversion:\n");
+    printf("1. Square Meter to Square Kilometer\n");
+    printf("2. Square Meter to Square Centimeter\n");
+    printf("3. Square Meter to Square Millimeter\n");
+    printf("4. Square Mile to Square Kilometer\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value * 1e-6;
+            printf("%.2f Square Meter = %.2f Square Kilometer\n", value, result);
+            break;
+        case 2:
+            result = value * 10000;
+            printf("%.2f Square Meter = %.2f Square Centimeter\n", value, result);
+            break;
+        case 3:
+            result = value * 1e6;
+            printf("%.2f Square Meter = %.2f Square Millimeter\n", value, result);
+            break;
+        case 4:
+            result = value * 2.58999;
+            printf("%.2f Square Mile = %.2f Square Kilometer\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_volume() {
+    int option;
+    double value, result;
+    
+    printf("\nVolume Conversion:\n");
+    printf("1. Cubic Meter to Liter\n");
+    printf("2. Liter to Milliliter\n");
+    printf("3. Gallon to Liter\n");
+    printf("4. Cubic Inch to Cubic Centimeter\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value * 1000;
+            printf("%.2f Cubic Meter = %.2f Liter\n", value, result);
+            break;
+        case 2:
+            result = value * 1000;
+            printf("%.2f Liter = %.2f Milliliter\n", value, result);
+            break;
+        case 3:
+            result = value * 3.78541;
+            printf("%.2f Gallon = %.2f Liter\n", value, result);
+            break;
+        case 4:
+            result = value * 16.387;
+            printf("%.2f Cubic Inch = %.2f Cubic Centimeter\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_mass() {
+    int option;
+    double value, result;
+    
+    printf("\nMass Conversion:\n");
+    printf("1. Kilogram to Gram\n");
+    printf("2. Kilogram to Pound\n");
+    printf("3. Pound to Kilogram\n");
+    printf("4. Gram to Ounce\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value * 1000;
+            printf("%.2f Kilogram = %.2f Gram\n", value, result);
+            break;
+        case 2:
+            result = value * 2.20462;
+            printf("%.2f Kilogram = %.2f Pound\n", value, result);
+            break;
+        case 3:
+            result = value * 0.453592;
+            printf("%.2f Pound = %.2f Kilogram\n", value, result);
+            break;
+        case 4:
+            result = value * 0.035274;
+            printf("%.2f Gram = %.2f Ounce\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_time() {
+    int option;
+    double value, result;
+    
+    printf("\nTime Conversion:\n");
+    printf("1. Second to Minute\n");
+    printf("2. Minute to Hour\n");
+    printf("3. Hour to Day\n");
+    printf("4. Day to Hour\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value / 60;
+            printf("%.2f Second = %.2f Minute\n", value, result);
+            break;
+        case 2:
+            result = value / 60;
+            printf("%.2f Minute = %.2f Hour\n", value, result);
+            break;
+        case 3:
+            result = value / 24;
+            printf("%.2f Hour = %.2f Day\n", value, result);
+            break;
+        case 4:
+            result = value * 24;
+            printf("%.2f Day = %.2f Hour\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_temperature() {
+    int option;
+    double value, result;
+    
+    printf("\nTemperature Conversion:\n");
+    printf("1. Celsius to Fahrenheit\n");
+    printf("2. Celsius to Kelvin\n");
+    printf("3. Fahrenheit to Celsius\n");
+    printf("4. Fahrenheit to Kelvin\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = (value * 9/5) + 32;
+            printf("%.2f Celsius = %.2f Fahrenheit\n", value, result);
+            break;
+        case 2:
+            result = value + 273.15;
+            printf("%.2f Celsius = %.2f Kelvin\n", value, result);
+            break;
+        case 3:
+            result = (value - 32) * 5/9;
+            printf("%.2f Fahrenheit = %.2f Celsius\n", value, result);
+            break;
+        case 4:
+            result = (value - 32) * 5/9 + 273.15;
+            printf("%.2f Fahrenheit = %.2f Kelvin\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
+
+void convert_speed() {
+    int option;
+    double value, result;
+    
+    printf("\nSpeed Conversion:\n");
+    printf("1. Meter per second to Kilometer per hour\n");
+    printf("2. Kilometer per hour to Meter per second\n");
+    printf("Enter your choice: ");
+    scanf("%d", &option);
+    
+    printf("Enter the value to convert: ");
+    scanf("%lf", &value);
+    
+    switch (option) {
+        case 1:
+            result = value * 3.6;
+            printf("%.2f Meter per second = %.2f Kilometer per hour\n", value, result);
+            break;
+        case 2:
+            result = value / 3.6;
+            printf("%.2f Kilometer per hour = %.2f Meter per second\n", value, result);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+}
+
